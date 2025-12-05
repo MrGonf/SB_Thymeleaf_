@@ -10,10 +10,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+
 public class CategoryModel implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@Id
     private Long id;
     @NotEmpty(message = "Không được bỏ trống")
     private String name;
@@ -24,6 +26,10 @@ public class CategoryModel implements Serializable{
 
 	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -50,17 +56,12 @@ public class CategoryModel implements Serializable{
 		this.status = status;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public Boolean getIsEdit() {
 		return isEdit;
 	}
 
 	public void setIsEdit(Boolean isEdit) {
 		this.isEdit = isEdit;
-	}
-    
+	}    
     
 }
